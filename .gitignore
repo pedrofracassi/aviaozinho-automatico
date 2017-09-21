@@ -57,5 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
-public/mp3/
-public/mp4/
+# Don't upload the damn images, bro
+images/
+
+# Security, duh
+accounts.js
+cookies.json

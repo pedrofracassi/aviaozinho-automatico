@@ -15,6 +15,9 @@ function submit() {
   socket.send(JSON.stringify(message));
 }
 
+socket.onclose = function(event) {
+  location.reload();
+}
 
 socket.onmessage = function (event) {
   var message = JSON.parse(event.data);
