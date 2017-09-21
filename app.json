@@ -1,0 +1,8 @@
+{
+  "name": "Aviaozinho",
+  "description": "Posts stuff to @aviaozinho_oficina",
+  "repository": "https://github.com/pedrofracassi/aviaozinho-automatico",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku", "instagram"],
+  "image": "heroku/nodejs"
+}
