@@ -1,4 +1,4 @@
-const Canvas = require('canvas');
+const Canvas = require('canvas-prebuilt');
 const opentype = require('opentype.js');
 const Instagram = require('instagram-private-api').V1;
 const utils = require('./utils.js');
