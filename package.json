@@ -1,0 +1,21 @@
+{
+  "name": "aviaozinho-automatico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^1.6.7",
+    "express": "^4.15.4",
+    "fs": "0.0.1-security",
+    "instagram-private-api": "^0.6.7",
+    "opentype.js": "^0.7.3",
+    "opn": "^5.1.0",
+    "png-to-jpeg": "^1.0.1",
+    "ws": "^3.2.0"
+  }
+}
