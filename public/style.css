@@ -1,0 +1,8 @@
+body {
+  padding-top: 20px;
+}
+
+#previewCanvas {
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+}
