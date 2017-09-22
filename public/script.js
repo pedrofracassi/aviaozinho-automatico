@@ -2,6 +2,8 @@ var socketprot = 'ws'
 if (window.location.protocol == 'https:') socketprot = 'wss';
 
 var socket = new WebSocket(`${socketprot}://${window.location.host}/`);
+const expression = /(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)/g;
+const url = "https://www.instagram.com/web/search/topsearch/?context=blended&query="
 
 function submit() {
   var texto = document.getElementById('field-message').value;
@@ -21,5 +23,13 @@ socket.onclose = function(event) {
 
 socket.onmessage = function (event) {
   var message = JSON.parse(event.data);
-  if (message.link) location.href = message.link;
+  console.log(event.data);
+  if (message.success) {
+    if (message.link) location.href = message.link;
+  } else {
+    document.getElementById('errorbox').innerHTML = message.error;
+    document.getElementById('errorbox').setAttribute('style', 'display: block');
+  }
 }
+
+//
