@@ -5,7 +5,6 @@ const path = require('path');
 const pngToJpeg = require('png-to-jpeg');
 const fs = require('fs');
 const express = require('express');
-const marista = express();
 const WebSocket = require('ws');
 const device = new Instagram.Device('someuser');
 const storage = new Instagram.CookieFileStorage(__dirname + '/cookies.json');
