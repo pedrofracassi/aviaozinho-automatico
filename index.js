@@ -11,11 +11,12 @@ const storage = new Instagram.CookieFileStorage(__dirname + '/cookies.json');
 
 const staticPath = path.join(__dirname, '/public');
 const port = process.env.PORT || 3000;
+const username = process.env.USERNAME || require('./accounts.js').oficina.username;
+const password = process.env.PASSWORD || require('./accounts.js').oficina.password;
 const server = express().use(express.static(staticPath)).listen(port, function() {
   console.log('Listening on port ' + port);
 });
 const wss = new WebSocket.Server({ server });
-const accounts = require('./accounts.js');
 const forbidden_words = [
   'fudidolly',
   'fudidoly'
@@ -72,7 +73,7 @@ function postMessage(text, caption, callback) {
         ctx.drawImage(img, logoX, 20, img.width / 4, img.height / 4);
         pngToJpeg({quality: 100})(canvas.toBuffer()).then(jpgOutput => {
           fs.writeFile(filePath, jpgOutput, () => {
-            Instagram.Session.create(device, storage, accounts.oficina.username, accounts.oficina.password).then(function(session) {
+            Instagram.Session.create(device, storage, username, password).then(function(session) {
               Instagram.Upload.photo(session, filePath).then(function(upload) {
                 return Instagram.Media.configurePhoto(session, upload.params.uploadId, caption);
               }).then(function(medium) {
