@@ -46,7 +46,7 @@ wss.on('connection', function connection(ws) {
 });
 
 function postMessage(text, caption, callback) {
-  if (!(new RegExp(forbidden_words.join("|")).test(string.toLowerCase()))) {
+  if (!(new RegExp(forbidden_words.join("|")).test(text.toLowerCase()))) {
     var gradient = gradients[Math.floor(Math.random() * gradients.length)];
     const canvas = new Canvas(1080, 1080);
     const ctx = canvas.getContext('2d');
