@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "canvas-prebuilt": "v1.6.0-canvas.5",
+    "canvas-prebuilt": "1.6.0",
     "express": "^4.15.4",
     "fs": "0.0.1-security",
     "instagram-private-api": "^0.6.7",
