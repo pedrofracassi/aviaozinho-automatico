@@ -33,3 +33,8 @@ socket.onmessage = function (event) {
 }
 
 //
+function changeClass() {
+    $('#picker li').removeClass('active');
+    $(this).addClass('active');
+}
+$('#picker li').on('click', changeClass);
