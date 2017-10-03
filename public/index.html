@@ -1,75 +1,63 @@
 <html>
 <head>
-  <title>Aviãozinho</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
+   <title>Aviãozinho</title>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="style.css">
 </head>
-<style media="screen">
-   .gradPicker {
-      margin: 0 auto;
-   }
-   .gradPicker ul{
-      list-style: none;
-   }
-   .gradPicker ul li{
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      border-radius:100%;
-      background-color: black;
-
-   }
-</style>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6 col-md-4">
-        <img src="https://i.imgur.com/UcFX7ey.png" id="logo" style="display: none"> <!-- ISSO TÁ AQUI POR CAUSA DO CANVAS. NÃO TRISCA -->
-        <canvas id="previewCanvas" width="720px" style="width: 100%;"></canvas>
+
+   <nav class="navbar navbar-inverse bg-inverse">
+      <div class="container">
+         <a class="navbar-brand" href="#">
+            <img src="icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Aviãozinho Oficina
+         </a>
       </div>
-      <div class="col-xs-12 col-md-8">
-        <div class="alert alert-danger" id="errorbox" role="alert" style="display: none;">
-          Erro
-        </div>
-        <div class="form-group">
-          <label>Mensagem</label>
-          <input type="text" class="form-control" id="field-message" placeholder="A mensagem que você quer mandar">
-        </div>
-        <div class="form-group">
-          <label>Legenda da foto</label>
-          <input type="text" id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui.">
-        </div>
-        <div class="spacer" style="height: 15px;"></div>
-        <input type="checkbox" id="checkbox-gradient-0" class="form-control">
-        <div class="spacer" style="height: 15px;"></div>
-        <center><button id="btn-submit" onclick="submit()" class="btn btn-default">Postar</button></center>
+   </nav>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <img src="https://i.imgur.com/UcFX7ey.png" id="logo" style="display: none"> <!-- ISSO TÁ AQUI POR CAUSA DO CANVAS. NÃO TRISCA -->
+            <canvas id="previewCanvas" width="720px" style="width: 100%;"></canvas>
+         </div>
+         <div class="col-xs-12 col-md-6 editor">
+            <div class="alert alert-danger" id="errorbox" role="alert" style="display: none;">
+               Erro
+            </div>
+            <div class="form-group">
+               <label>Mensagem</label>
+               <textarea class="form-control" rows="4"  cols="150" id="field-message" maxlength="111" autofocus required placeholder="A mensagem que você quer mandar"></textarea>
+            </div>
+            <div class="form-group">
+               <label>Legenda da foto</label>
+               <input type="text" required id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui.">
+            </div>
+            <div class="gradPicker">
+               <ul >
+                  <li id="g1"></li>
+                  <li id="g2"></li>
+                  <li id="g3"></li>
+                  <li id="g4"></li>
+                  <li id="g5"></li>
+                  <li id="g6"></li>
+                  <li id="g7"></li>
+                  <li id="g8"></li>
+                  <li id="g9"></li>
+               </ul>
+            </div>
+            <div class="spacer" style="height: 15px;"></div>
+            <center><button id="btn-submit" onclick="submit()" class="btn btn-default col-md-12">Publicar</button></center>
+         </div>
       </div>
-    </div>
-<<<<<<< HEAD
-    <div class="form-group">
-      <label>Legenda da foto</label>
-      <input type="text" id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui.">
-    </div>
-    <div class="gradPicker">
-       <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-       </ul>
-    </div>
-    <button id="btn-submit" onclick="submit()" class="btn btn-default">Postar</button>
-=======
->>>>>>> e0c211ff5007bc18fc8d0ec28844629ab75ca074
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
-  <script src="preview.js"></script>
+   </div>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+   <script src="script.js"></script>
+   <script src="preview.js"></script>
 </body>
 </html>
