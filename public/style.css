@@ -3,7 +3,7 @@ body {
 }
 
 .navbar-inverse {
-   background: #212529;
+   background: #111111;
    margin-bottom: 20px;
    color: white;
    text-align: center !important;
@@ -129,15 +129,21 @@ body {
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#2f0743',GradientType=1 );
 }
 #btn-submit {
-   background-color: 212529;
+   background-color: #111111;
    color: white;
 }
 .alerta {
    text-align: center;
+   margin-top: 10px;
    padding-top: 8px;
-   padding:bottom: 10px;
+   padding-bottom: 1px !important;
    background: rgba(0,0,0,0.05);
 }
 .alerta p {
    margin-bottom: 10px !important;
+}
+@media (max-width: 767px) {
+   .editor{
+      margin-top: 15px;
+   }
 }
