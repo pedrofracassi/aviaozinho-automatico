@@ -11,7 +11,7 @@ const device = new Instagram.Device('someuser');
 const storage = new Instagram.CookieFileStorage(__dirname + '/cookies.json');
 
 const staticPath = path.join(__dirname, '/public');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 const server = express().use(express.static(staticPath)).listen(port, function() {
