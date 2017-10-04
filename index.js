@@ -54,7 +54,7 @@ function postMessage(text, caption, gradient, callback) {
     ctx.fillStyle = grd;
     ctx.fillRect(0,0,1080,1080);
     ctx.fillStyle = "white";
-    paint_centered_wrap(canvas, 0, -30, canvas.width, canvas.height, text, 40, 10);
+    utils.paint_centered_wrap(canvas, 0, -30, canvas.width, canvas.height, text, 55, 10);
     var randomString = Math.random().toString(36).substr(2, 6);
     var filePath = "./images/jpg/" + randomString + ".jpg";
     fs.readFile(__dirname + '/logo-simple.png', function(err, data) {
@@ -69,7 +69,7 @@ function postMessage(text, caption, gradient, callback) {
         img.src = data;
         ctx.globalAlpha = 0.6;
         ctx.fillStyle = "#111111";
-        ctx.rect(0,0,1080,100);
+        ctx.rect(0,0,1080,125);
         ctx.fill();
         ctx.globalAlpha = 1;
         var logoX = (canvas.width / 2) - (img.width / 2);
@@ -92,6 +92,7 @@ function postMessage(text, caption, gradient, callback) {
         });
       }
     });
+    console.log("teste");
   } else {
     var message = {
       success: false,
