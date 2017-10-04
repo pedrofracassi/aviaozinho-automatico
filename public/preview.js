@@ -15,7 +15,7 @@ function update(text, gradient) {
   ctx.fillStyle = grd;
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.fillStyle = "white";
-  paint_centered_wrap(canvas, 0, 0, canvas.width, canvas.height, text, 48, 2);
+  paint_centered_wrap(canvas, 0, -30, canvas.width, canvas.height, text, 40, 10);
   ctx.globalAlpha = 0.6;
   ctx.fillStyle = "#111111";
   ctx.rect(0,0,1080,100);
