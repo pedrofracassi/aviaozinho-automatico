@@ -5,6 +5,8 @@ var socket = new WebSocket(`${socketprot}://${window.location.host}/`);
 const expression = /(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)/g;
 const url = "https://www.instagram.com/web/search/topsearch/?context=blended&query="
 
+var currentGradient = 0;
+
 function submit() {
   var texto = document.getElementById('field-message').value;
   var legenda = document.getElementById('field-caption').value;
@@ -12,7 +14,8 @@ function submit() {
   document.getElementById('btn-submit').setAttribute('disabled', 'true');
   var message = {
     text: texto,
-    caption: legenda
+    caption: legenda,
+    gradient: gradients[currentGradient]
   }
   socket.send(JSON.stringify(message));
 }
@@ -32,9 +35,11 @@ socket.onmessage = function (event) {
   }
 }
 
-//
 function changeClass() {
     $('#picker li').removeClass('active');
     $(this).addClass('active');
+    currentGradient = $(this).attr('data-gradient-id');
+    update();
 }
+
 $('#picker li').on('click', changeClass);
