@@ -5,18 +5,15 @@ document.oninput = window.onresize = function(thing) {
 }
 
 var gradients = [
-  ["#007991", "#78ffd6"],
-  ["#56CCF2", "#2F80ED"],
-  ["#F2994A", "#F2C94C"],
-  ["#4AC29A", "#BDFFF3"],
-  ["#B2FEFA", "#0ED2F7"],
-  ["#D66D75", "#E29587"],
-  ["#20002c", "#cbb4d4"],
-  ["#C33764", "#1D2671"],
-  ["#34e89e", "#0f3443"],
-  ["#6190E8", "#A7BFE8"],
-  ["#D38312", "#A83279"],
-  ["#00c6ff", "#0072ff"]
+   ["#f00000", "#dc281e"],
+   ["#eb3349", "#f45c43"],
+   ["#ec008c", "#fc6767"],
+   ["#fc4a1a", "#f7b733"],
+   ["#11998e", "#38ef7d"],
+   ["#3494e6", "#ec6ead"],
+   ["#5c258d", "#4389a2"],
+   ["#cc2b5e", "#753a88"],
+   ["#41295a", "#2f0743"]
 ]
 
 var gradient = gradients[Math.floor(Math.random() * gradients.length)];
@@ -33,10 +30,15 @@ function update(text) {
     ctx.fillStyle = grd;
     ctx.fillRect(0,0,canvas.width, canvas.height);
     ctx.fillStyle = "white";
-    paint_centered_wrap(canvas, 0, 0, canvas.width, canvas.height, text, 48, 2);
-    var downsacle = (canvas.width*8)/1080;
+    paint_centered_wrap(canvas, 0, 0, canvas.width, canvas.height, text, 50, 2);
+    ctx.globalAlpha = 0.6;
+    ctx.fillStyle = "#111111";
+    ctx.rect(0,0,1080,100);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    var downsacle = (canvas.width*2)/1080;
     var logoX = (canvas.width / 2) - (img.width / downsacle / 2);
-    ctx.drawImage(img, logoX, 20, img.width / downsacle, img.height / downsacle);
+    ctx.drawImage(img, logoX, 10, img.width / downsacle, img.height / downsacle);
 }
 
 paint_centered_wrap = function(canvas, x, y, w, h, text, fh, spl) {
