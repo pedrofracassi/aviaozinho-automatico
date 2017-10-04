@@ -54,10 +54,10 @@ function postMessage(text, caption, gradient, callback) {
     ctx.fillStyle = grd;
     ctx.fillRect(0,0,1080,1080);
     ctx.fillStyle = "white";
-    utils.paint_centered_wrap(canvas, 0, 0, 1080, 1080, text, 72, 2);
+    paint_centered_wrap(canvas, 0, -30, canvas.width, canvas.height, text, 40, 10);
     var randomString = Math.random().toString(36).substr(2, 6);
     var filePath = "./images/jpg/" + randomString + ".jpg";
-    fs.readFile(__dirname + '/logo2.png', function(err, data) {
+    fs.readFile(__dirname + '/logo-simple.png', function(err, data) {
       if (err) {
         var message = {
           success: false,
@@ -67,8 +67,13 @@ function postMessage(text, caption, gradient, callback) {
       } else {
         var img = new Canvas.Image;
         img.src = data;
-        var logoX = (canvas.width / 2) - (img.width / 8);
-        ctx.drawImage(img, logoX, 20, img.width / 4, img.height / 4);
+        ctx.globalAlpha = 0.6;
+        ctx.fillStyle = "#111111";
+        ctx.rect(0,0,1080,100);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        var logoX = (canvas.width / 2) - (img.width / 2);
+        ctx.drawImage(img, logoX, 10, img.width, img.height);
         pngToJpeg({quality: 100})(canvas.toBuffer()).then(jpgOutput => {
           fs.writeFile(filePath, jpgOutput, () => {
             Instagram.Session.create(device, storage, username, password).then(function(session) {
