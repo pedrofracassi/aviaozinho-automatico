@@ -48,7 +48,7 @@ body {
 .gradPicker{
   list-style: none;
 }
-#picker li {
+.gradPicker ul li {
   display: inline-block;
   width: 26px;
   height: 26px;
