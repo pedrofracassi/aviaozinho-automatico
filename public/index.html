@@ -1,74 +1,76 @@
 <html>
 <head>
-   <title>Aviãozinho</title>
-   <meta charset="utf-8">
-   <meta name="theme-color" content="#111111">
-   <link rel="icon" sizes="150x150" href="icon-150px.png">
-   <link rel="icon" sizes="192x192" href="icon-192px.png">
-   <link rel="icon" sizes="300x300" href="icon-300px.png">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="mobile-web-app-capable" content="yes">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="style.css">
+  <title>Aviãozinho</title>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" sizes="150x150" href="icon-150px.png">
+  <link rel="icon" sizes="192x192" href="icon-192px.png">
+  <link rel="icon" sizes="300x300" href="icon-300px.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-   <nav class="navbar navbar-inverse bg-inverse">
-      <div class="container">
-         <a class="navbar-brand" href="#">
-            <img src="icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Aviãozinho Oficina
-         </a>
-      </div>
+  <nav class="navbar navbar-inverse bg-inverse">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Aviãozinho Oficina
+      </a>
+    </div>
 
-   </nav>
-   <div class="container">
-      <div class="row">
-         <div class="col-md-6">
-            <img src="logo-simple.png" id="logo" style="display: none"> <!-- ISSO TÁ AQUI POR CAUSA DO CANVAS. NÃO TRISCA -->
-            <canvas id="previewCanvas" width="720px" style="width: 100%;"></canvas>
-         </div>
-         <div class="col-xs-12 col-md-6 editor">
-            <div class="alert alert-danger" id="errorbox" role="alert" style="display: none;">
-               Erro
-            </div>
-            <div class="form-group">
-               <label>Mensagem</label>
-               <textarea class="form-control" rows="4"  cols="150" id="field-message" maxlength="228" autofocus required placeholder="A mensagem que você quer mandar"></textarea>
-            </div>
-            <div class="form-group">
-               <label>Legenda da foto</label>
-               <input type="text" required id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui.">
-            </div>
-            <div class="gradPicker">
-               <ul id="picker">
-                  <li class="g0 active" data-gradient-id="0"></li>
-                  <li class="g1" data-gradient-id="1"></li>
-                  <li class="g2" data-gradient-id="2"></li>
-                  <li class="g3" data-gradient-id="3"></li>
-                  <li class="g4" data-gradient-id="4"></li>
-                  <li class="g5" data-gradient-id="5"></li>
-                  <li class="g6" data-gradient-id="6"></li>
-                  <li class="g7" data-gradient-id="7"></li>
-                  <li class="g8" data-gradient-id="8"></li>
-               </ul>
-            </div>
-            <div class="spacer" style="height: 15px;"></div>
-            <center><button id="btn-submit" onclick="submit()" class="btn btn-default col-md-12">Publicar</button></center>
-         </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="logo-simple.png" id="logo" style="display: none"> <!-- ISSO TÁ AQUI POR CAUSA DO CANVAS. NÃO TRISCA -->
+        <canvas id="previewCanvas" width="720px" style="width: 100%;"></canvas>
       </div>
-   </div>
-   <div class="alerta">
-      <p>Nenhuma das mensagens geradas a partir desde site são de responsabilidade de seus idealizadores.</p>
-   </div>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-   <script src="gradients.js"></script>
-   <script src="script.js"></script>
-   <script src="preview.js"></script>
+      <div class="col-xs-12 col-md-6 editor">
+        <div class="alert alert-danger" id="errorbox" role="alert" style="display: none;">
+          Erro
+        </div>
+        <div class="form-group">
+          <label>Mensagem</label>
+          <textarea class="form-control" rows="4"  cols="150" id="field-message" maxlength="228" autofocus required placeholder="A mensagem que você quer mandar"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Legenda da foto</label>
+          <input type="text" id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui."  required>
+        </div>
+        <div class="gradPicker">
+          <!-- <p>Escolha uma cor de fundo:</p> -->
+          <ul id="picker">
+
+            <li class="g0 active" data-gradient-id="0"></li>
+            <li class="g1" data-gradient-id="1"></li>
+            <li class="g2" data-gradient-id="2"></li>
+            <li class="g3" data-gradient-id="3"></li>
+            <li class="g4" data-gradient-id="4"></li>
+            <li class="g5" data-gradient-id="5"></li>
+            <li class="g6" data-gradient-id="6"></li>
+            <li class="g7" data-gradient-id="7"></li>
+            <li class="g8" data-gradient-id="8"></li>
+          </ul>
+        </div>
+        <div class="spacer" style="height: 15px;"></div>
+        <center><button id="btn-submit" onclick="submit()" class="btn btn-default col-md-12">Publicar</button></center>
+      </div>
+    </div>
+  </div>
+  <div class="alerta">
+    <p>Nenhuma das mensagens geradas a partir desde site são de responsabilidade de seus idealizadores.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <script src="gradients.js"></script>
+  <script src="script.js"></script>
+  <script src="preview.js"></script>
 
 </body>
 </html>
