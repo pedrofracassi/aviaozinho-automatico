@@ -2,6 +2,7 @@ const Canvas = require('canvas-prebuilt');
 const Instagram = require('instagram-private-api').V1;
 const utils = require('./utils.js');
 const gradientsFile = require('./public/gradients.js');
+const accountsFile = require('./accounts.js');
 const path = require('path');
 const pngToJpeg = require('png-to-jpeg');
 const fs = require('fs');
@@ -12,8 +13,8 @@ const storage = new Instagram.CookieFileStorage(__dirname + '/cookies.json');
 
 const staticPath = path.join(__dirname, '/public');
 const port = process.env.PORT || 8080;
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+const username = accountsFile.oficina.username;
+const password = accountsFile.oficina.passowrd;
 const server = express().use(express.static(staticPath)).listen(port, function() {
   console.log('Listening on port ' + port);
 });
