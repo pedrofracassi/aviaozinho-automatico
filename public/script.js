@@ -10,6 +10,7 @@ var currentGradient = 0;
 function submit() {
   var texto = document.getElementById('field-message').value;
   var legenda = document.getElementById('field-caption').value;
+  if(legenda == '') legenda = 'Sem descrição';
   document.getElementById('btn-submit').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Postando...';
   document.getElementById('btn-submit').setAttribute('disabled', 'true');
   var message = {
