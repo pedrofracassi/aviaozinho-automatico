@@ -11,7 +11,6 @@ body {
 }
 .navbar-inverse a {
   color: white !important;
-  font-family: Arial Black;
   margin: 0 auto;
 }
 .navbar-inverse a:hover {
