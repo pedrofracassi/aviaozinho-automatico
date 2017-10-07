@@ -3,11 +3,12 @@
   <title>Aviãozinho</title>
   <meta charset="utf-8">
   <meta name="theme-color" content="#111111">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" sizes="150x150" href="icon-150px.png">
   <link rel="icon" sizes="192x192" href="icon-192px.png">
   <link rel="icon" sizes="300x300" href="icon-300px.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,12 +36,12 @@
           Erro
         </div>
         <div class="form-group">
-          <label>Mensagem</label>
+          <label>Mensagem:</label>
           <textarea class="form-control" rows="4"  cols="150" id="field-message" maxlength="228" autofocus required placeholder="A mensagem que você quer mandar"></textarea>
         </div>
         <div class="form-group">
-          <label>Legenda da foto</label>
-          <input type="text" id="field-caption" class="form-control" placeholder="Coloque os @s das pessoas que você quer que vejam a foto aqui."  required>
+          <label>Legenda da foto:</label>
+          <textarea id="field-caption" rows="4" class="form-control" placeholder="Você também pode marcar os @s das pessoas que deseja marcar na publicacão" required></textarea>
         </div>
         <div class="gradPicker">
           <!-- <p>Escolha uma cor de fundo:</p> -->

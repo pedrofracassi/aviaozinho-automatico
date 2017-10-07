@@ -1,0 +1,27 @@
+{
+  "name": "Aviãozinho Oficina",
+  "background_color": "#111111",
+  "icons": [
+    {
+      "src": "icon-150px.png",
+      "sizes": "150x150",
+      "type": "image/png",
+      "density": 2.0
+    },
+    {
+      "src": "icon-192px.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": 3.0
+    },
+    {
+      "src": "icon-300px.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "density": 4.0
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
