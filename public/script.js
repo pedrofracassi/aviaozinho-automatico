@@ -13,16 +13,21 @@ function submit() {
   var legenda = document.getElementById('field-caption').value;
   active=true;
   if(legenda == '') legenda = 'Sem descrição.';
-  document.getElementById('btn-submit').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Postando...';
-  document.getElementById('btn-submit').setAttribute('disabled', 'true');
-  document.getElementById('field-message').setAttribute('disabled', 'true');
-  document.getElementById('field-caption').setAttribute('disabled', 'true');
-  var message = {
-    text: texto,
-    caption: legenda,
-    gradient: gradients[currentGradient]
+  if(texto != '') {
+    document.getElementById('btn-submit').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Postando...';
+    document.getElementById('btn-submit').setAttribute('disabled', 'true');
+    document.getElementById('field-message').setAttribute('disabled', 'true');
+    document.getElementById('field-caption').setAttribute('disabled', 'true');
+    var message = {
+      text: texto,
+      caption: legenda,
+      gradient: gradients[currentGradient]
+    }
+    socket.send(JSON.stringify(message));
+  } else {
+    document.getElementById('errorbox').innerHTML = 'Por favor, insira uma mensagem';
+    document.getElementById('errorbox').setAttribute('style', 'display: block');
   }
-  socket.send(JSON.stringify(message));
 }
 
 socket.onclose = function(event) {
