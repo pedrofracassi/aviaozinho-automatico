@@ -14,7 +14,7 @@ module.exports = {
   paint_centered_wrap: function(canvas, x, y, w, h, text, fh, spl) {
     canvas.registerFontFace({
       fontFamily: 'Arial Black',
-      src: '.fonts/Pfennig.ttf'
+      src: '.fonts/Arial Black.ttf'
     });
     var Paint = {
       RECTANGLE_STROKE_STYLE : 'black',
