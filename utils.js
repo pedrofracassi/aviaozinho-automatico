@@ -12,13 +12,19 @@ module.exports = {
   * @param spl   :  Vertical space between lines
   */
   paint_centered_wrap: function(canvas, x, y, w, h, text, fh, spl) {
+    canvas.registerFontFace({
+      fontFamily: 'Arial Black',
+      src: '.fonts/Pfennig.ttf'
+    });
     var Paint = {
       RECTANGLE_STROKE_STYLE : 'black',
       RECTANGLE_LINE_WIDTH : 0,
+      VALUE_FONT : fh + 'px Arial Black',
       VALUE_FILL_STYLE : 'red'
     }
-    var split_lines = function(ctx, mw, text1) {
+    var split_lines = function(ctx, mw, font, text1) {
       mw = mw - 10;
+      ctx2d.font = font;
       var text = text1.toUpperCase();
       var words = text.split(' ');
       var new_line = words[0];
@@ -36,7 +42,7 @@ module.exports = {
     }
     var ctx2d = canvas.getContext('2d');
     if (ctx2d) {
-      var lines = split_lines(ctx2d, w, text);
+      var lines = split_lines(ctx2d, w, Paint.VALUE_FONT, text);
       var both = lines.length * (fh + spl);
       if (both >= h) {
         // AREA TWO SMALL
