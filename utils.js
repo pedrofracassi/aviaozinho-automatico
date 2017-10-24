@@ -15,7 +15,6 @@ module.exports = {
     var Paint = {
       RECTANGLE_STROKE_STYLE : 'black',
       RECTANGLE_LINE_WIDTH : 0,
-      VALUE_FONT : fh + 'px Helvetica',
       VALUE_FILL_STYLE : 'red'
     }
     var split_lines = function(ctx, mw, font, text1) {
