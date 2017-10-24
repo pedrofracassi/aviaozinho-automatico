@@ -22,6 +22,7 @@ const forbidden_words = [
   'fudidolly',
   'fudidoly'
 ]
+registerFont('.fonts/Arial-Black.ttf', {family: 'Arial Black'});
 
 // Creat image directory if it doesen't exist yet
 var imagedir = './images'

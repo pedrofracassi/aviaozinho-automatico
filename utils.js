@@ -12,10 +12,6 @@ module.exports = {
   * @param spl   :  Vertical space between lines
   */
   paint_centered_wrap: function(canvas, x, y, w, h, text, fh, spl) {
-    canvas.registerFontFace({
-      fontFamily: 'Arial Black',
-      src: '.fonts/Arial Black.ttf'
-    });
     var Paint = {
       RECTANGLE_STROKE_STYLE : 'black',
       RECTANGLE_LINE_WIDTH : 0,
