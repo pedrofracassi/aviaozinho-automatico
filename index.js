@@ -22,7 +22,7 @@ const forbidden_words = [
   'fudidolly',
   'fudidoly'
 ]
-Canvas.registerFont('.fonts/Arial-Black.ttf', {family: 'Arial Black'});
+Canvas.registerFont('.fonts/Arial-black.ttf', {family: 'Arial Black'});
 
 // Creat image directory if it doesen't exist yet
 var imagedir = './images'
